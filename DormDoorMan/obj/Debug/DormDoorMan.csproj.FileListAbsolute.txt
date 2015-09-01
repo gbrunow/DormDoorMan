@@ -53,7 +53,6 @@ U:\git\DormDoorMan\DormDoorMan\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 U:\git\DormDoorMan\DormDoorMan\obj\Debug\DormDoorMan.csprojResolveAssemblyReference.cache
 U:\git\DormDoorMan\DormDoorMan\obj\Debug\DormDoorMan.dll
 U:\git\DormDoorMan\DormDoorMan\obj\Debug\DormDoorMan.pdb
-C:\Users\PUCPR\Desktop\PortableGit\repos\DormDoorMan\DormDoorMan\obj\Debug\DormDoorMan.csprojResolveAssemblyReference.cache
 C:\Users\PUCPR\Desktop\PortableGit\repos\DormDoorMan\DormDoorMan\obj\Debug\DormDoorMan.dll
 C:\Users\PUCPR\Desktop\PortableGit\repos\DormDoorMan\DormDoorMan\obj\Debug\DormDoorMan.pdb
 C:\Users\PUCPR\Desktop\PortableGit\repos\DormDoorMan\DormDoorMan\bin\DormDoorMan.dll.config
@@ -108,3 +107,5 @@ C:\Users\PUCPR\Desktop\PortableGit\repos\DormDoorMan\DormDoorMan\bin\Microsoft.O
 C:\Users\PUCPR\Desktop\PortableGit\repos\DormDoorMan\DormDoorMan\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\PUCPR\Desktop\PortableGit\repos\DormDoorMan\DormDoorMan\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\PUCPR\Desktop\PortableGit\repos\DormDoorMan\DormDoorMan\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\PUCPR\Desktop\PortableGit\repos\DormDoorMan\DormDoorMan\obj\Debug\DormDoorMan.Migrations.Initial.resources
+C:\Users\PUCPR\Desktop\PortableGit\repos\DormDoorMan\DormDoorMan\obj\Debug\DormDoorMan.csproj.GenerateResource.Cache

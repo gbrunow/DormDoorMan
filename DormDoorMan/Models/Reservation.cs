@@ -9,14 +9,20 @@ namespace DormDoorMan.Models
 {
     public class Reservation : Schedule
     {
-        [ForeignKey("GuestID")]
+        [Key]
+        public int Id { get; set; }
+
         public int GuestID { get; set; }
+        
+        [ForeignKey("GuestID")]
         [Required, Display(Name = "Hóspede Responsável")]
         public virtual Guest Guest { get; set; }
+
         [Required, Display(Name = "Número de Hóspedes")]
         public int GuestNumber { get; set; }
-        [ForeignKey("PaymentID")]
         public int PaymentID { get; set; }
+        
+        [ForeignKey("PaymentID")]
         [Display(Name = "Pagamento")]
         public virtual Payment Payment { get; set; }
     }

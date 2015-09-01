@@ -9,13 +9,17 @@ namespace DormDoorMan.Models
 {
     public class Package : Schedule
     {
+        [Key]
+        public int Id { get; set; }
+        public int AddresseID { get; set; }
+
         [ForeignKey("AddresseID")]
-        public int AdresseID { get; set; }
         [Required, Display(Name = "Destinatário")]
         public virtual Resident Addresse { get; set; }
 
-        [ForeignKey("PickUpPersonID")]
         public int PickUpPersonID { get; set; }
+
+        [ForeignKey("PickUpPersonID")]
         [Display(Name = "Retirado por")]
         public virtual Resident PickUpPerson { get; set; }
     }

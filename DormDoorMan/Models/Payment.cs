@@ -9,12 +9,17 @@ namespace DormDoorMan.Models
 {
     public class Payment
     {
+        [Key]
+        public int Id { get; set; }
+
         [Required, Display(Name = "Valor Pago")]
         public double Value { get; set; }
+
         [Display(Name = "Comprovante")]
         public byte[] ProofOfPayment { get; set; }
-        [ForeignKey("HostingID")]
         public int HostingID { get; set; }
+
+        [ForeignKey("HostingID")]
         public virtual Hosting Hosting { get; set; }
     }
 }

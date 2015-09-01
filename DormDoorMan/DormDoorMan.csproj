@@ -164,13 +164,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DDMContext.cs" />
     <Compile Include="Models\Guest.cs" />
     <Compile Include="Models\Hosting.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Package.cs" />
+    <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\Resident.cs" />
+    <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\Visit.cs" />
     <Compile Include="Models\Visitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

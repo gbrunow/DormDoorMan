@@ -14,9 +14,6 @@ namespace DormDoorMan.Models
             this.Reservations = new HashSet<Reservation>();
         }
 
-        [Key]
-        public int Id { get; set; }
-
         [Display(Name = "Hospedagens")]
         public virtual ICollection<Hosting> Hostings { get; set; }
 

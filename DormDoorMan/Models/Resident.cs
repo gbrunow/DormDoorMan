@@ -8,11 +8,9 @@ namespace DormDoorMan.Models
 {
     public class Resident : Person
     {
-        [Key]
-        public int Id { get; set; }
-
         [Required, Display(Name = "Quarto")]
-        public int Room { get; set; }
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Utilize apenas números.")]
+        public string Room { get; set; }
 
         [Display(Name = "Visitantes")]
         public ICollection<Visit> Visits { get; set; }

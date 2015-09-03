@@ -30,7 +30,8 @@ namespace DormDoorMan.Models
 
         [RegularExpression("^[0-9]{11}$|^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$", ErrorMessage = "CPF Inválido.")]
         public string CPF { get; set; }
-        [RegularExpression("^[0-9]{9}$|^[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}$", ErrorMessage = "RG Inválido.")]
+
+        //[RegularExpression("^[0-9]{9}$|^[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}$", ErrorMessage = "RG Inválido.")]
         public string RG { get; set; }
 
         [Display(Name = "Número do Passaporte")]

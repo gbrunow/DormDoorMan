@@ -9,8 +9,6 @@ namespace DormDoorMan.Models
 {
     public class Package : Schedule
     {
-        [Key]
-        public int Id { get; set; }
         public int AddresseID { get; set; }
 
         [ForeignKey("AddresseID")]

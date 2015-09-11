@@ -9,15 +9,24 @@ namespace DormDoorMan.Models
 {
     public class Visit : Schedule
     {
+        [Required, Display(Name = "Morador")]
         public int ResidentID { get; set; }
 
         [ForeignKey("ResidentID")]
-        [Required, Display(Name = "Morador")]
         public virtual Resident Resident { get; set; }
+
+        [Required, Display(Name = "Visitante")]
         public int VisitorID { get; set; }
         
         [ForeignKey("VisitorID")]
-        [Required, Display(Name = "Visitante")]
         public virtual Visitor Visitor { get; set; }
+
+        public double VisitTime
+        {
+            get
+            {
+                return ((this.CheckOut ?? DateTime.Now) - this.CheckIn).TotalHours;
+            }
+        }
     }
 }

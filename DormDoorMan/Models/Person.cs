@@ -47,7 +47,7 @@ namespace DormDoorMan.Models
         public string NaturalityState { get; set; }
 
         [Required, Display(Name = "Data de Nascimento"), DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = false)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
         //[DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Birthday { get; set; }
 
@@ -90,6 +90,15 @@ namespace DormDoorMan.Models
             get
             {
                 return FirstName + " " + LastName;
+            }
+        }
+
+        [Display(Name = "Idade")]
+        public int Age
+        {
+            get
+            {
+                return (int)((DateTime.Now - this.Birthday).Days / 365);
             }
         }
 

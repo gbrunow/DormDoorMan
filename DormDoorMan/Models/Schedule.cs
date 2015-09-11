@@ -11,12 +11,10 @@ namespace DormDoorMan.Models
         [Key]
         public int Id { get; set; }
 
-        [Required, Display(Name = "Entrada")]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [Required, Display(Name = "Entrada"), DataType(DataType.Date)]
         public DateTime CheckIn { get; set; }
 
-        [Required, Display(Name = "Saída")]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime CheckOut { get; set; }
+        [Display(Name = "Saída"), DataType(DataType.Date)]
+        public DateTime? CheckOut { get; set; }
     }
 }

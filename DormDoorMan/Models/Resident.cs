@@ -8,6 +8,13 @@ namespace DormDoorMan.Models
 {
     public class Resident : Person
     {
+        public Resident()
+        {
+            this.TrustedPeople = new HashSet<Resident>();
+            this.Packages = new HashSet<Package>();
+            this.Visits = new HashSet<Visit>();
+        }
+
         [Required, Display(Name = "Quarto")]
         [RegularExpression("^[0-9]*$", ErrorMessage = "Utilize apenas números.")]
         public string Room { get; set; }
@@ -19,6 +26,6 @@ namespace DormDoorMan.Models
         public ICollection<Package> Packages { get; set; }
 
         [Display(Name = "Pessoas de Confiança")]
-        public ICollection<Resident> TrustedPeople { get; set; }
+        public ICollection<Resident> TrustedPeople { get; set; }        
     }
 }

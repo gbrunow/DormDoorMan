@@ -164,6 +164,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\ResidentController.cs" />
+    <Compile Include="Controllers\VisitController.cs" />
+    <Compile Include="Controllers\VisitorController.cs" />
+    <Compile Include="Controllers\VisitsReportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,6 +177,10 @@
     <Compile Include="Migrations\201509030131523_Room_string.cs" />
     <Compile Include="Migrations\201509030131523_Room_string.Designer.cs">
       <DependentUpon>201509030131523_Room_string.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509090105581_Adjustments.cs" />
+    <Compile Include="Migrations\201509090105581_Adjustments.Designer.cs">
+      <DependentUpon>201509090105581_Adjustments.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -189,6 +196,7 @@
     <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\Visit.cs" />
     <Compile Include="Models\Visitor.cs" />
+    <Compile Include="Models\VisitsReportViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -248,6 +256,21 @@
     <Content Include="Views\Resident\Details.cshtml" />
     <Content Include="Views\Resident\Edit.cshtml" />
     <Content Include="Views\Resident\Index.cshtml" />
+    <Content Include="Views\Visitor\Create.cshtml" />
+    <Content Include="Views\Visitor\Delete.cshtml" />
+    <Content Include="Views\Visitor\Details.cshtml" />
+    <Content Include="Views\Visitor\Edit.cshtml" />
+    <Content Include="Views\Visitor\Index.cshtml" />
+    <Content Include="Views\Visit\Create.cshtml" />
+    <Content Include="Views\Visit\Delete.cshtml" />
+    <Content Include="Views\Visit\Details.cshtml" />
+    <Content Include="Views\Visit\Edit.cshtml" />
+    <Content Include="Views\Visit\Index.cshtml" />
+    <Content Include="Views\VisitsReport\Create.cshtml" />
+    <Content Include="Views\VisitsReport\Delete.cshtml" />
+    <Content Include="Views\VisitsReport\Details.cshtml" />
+    <Content Include="Views\VisitsReport\Edit.cshtml" />
+    <Content Include="Views\VisitsReport\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -265,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201509030131523_Room_string.resx">
       <DependentUpon>201509030131523_Room_string.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509090105581_Adjustments.resx">
+      <DependentUpon>201509090105581_Adjustments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

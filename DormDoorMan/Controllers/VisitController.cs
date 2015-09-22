@@ -51,8 +51,8 @@ namespace DormDoorMan.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include="Id,ResidentID,VisitorID,CheckIn,CheckOut")] Visit visit)
         {
-            /*visit.Resident = db.Residents.Find(visit.ResidentID);
-            visit.Visitor = db.Visitors.Find(visit.VisitorID);*/
+            visit.Resident = db.Residents.Find(visit.ResidentID);
+            visit.Visitor = db.Visitors.Find(visit.VisitorID);
             if (ModelState.IsValid)
             {
                 db.Visits.Add(visit);

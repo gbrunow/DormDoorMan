@@ -4,23 +4,40 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<h2>Relatório de Diárias</h2>
+<span>@DateTime.Now.Date.AddMonths(-1).ToLongDateString() à @DateTime.Now.Date.ToLongDateString()</span>
+<!--
 <p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>-->
 <table class="table">
     <tr>
-        <th></th>
+        <th>@Html.DisplayNameFor(model => model.Resident)</th>
+        <th>@Html.DisplayNameFor(model => model.hostingDays)</th>
+        <th>@Html.DisplayNameFor(model => model.extraDays)</th>
+        <th>@Html.DisplayNameFor(model => model.hostingFees)</th>
+        <!--<th></th>-->
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.Resident.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hostingDays)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.extraDays)
+        </td>
+        <td>
+            <span>R$ </span>@Html.DisplayFor(modelItem => item.hostingFees)
+        </td>
+       <!--<td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
+        </td>-->
     </tr>
 }
 

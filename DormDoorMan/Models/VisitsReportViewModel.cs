@@ -9,9 +9,15 @@ namespace DormDoorMan.Models
         public int Id { get; set; }
 
         [Display(Name = "Morador")]
-        public ICollection<Resident> Residents { get; set; }  
+        public Resident Resident { get; set; }  
 
         [Display(Name = "Diárias")]
-        public ICollection<int> hostingDays { get; set; }
+        public int hostingDays { get; set; }
+
+        [Display(Name = "Diárias Extras")]
+        public int extraDays { get; set; }
+
+        [Display(Name = "Multa")]
+        public int hostingFees { get; set; }
     }
 }

@@ -17,11 +17,33 @@ namespace DormDoorMan.Controllers
         // GET: /VisitsReport/
         public ActionResult Index()
         {
-            return View(db.VisitsReportViewModels.ToList());
+            var residents = db.Residents.ToList();
+            List<VisitsReportViewModel> report = new List<VisitsReportViewModel>();
+            foreach (var resident in residents)
+            {
+                VisitsReportViewModel item = new VisitsReportViewModel();
+                var monthAgo = DateTime.Now.Date.AddMonths(-1);
+                var visits = db.Visits.Where(v => v.ResidentID == resident.Id && v.CheckIn >= monthAgo);
+                double days = 0;
+                foreach(var visit in visits)
+                {
+                    days += visit.VisitTime; 
+                }
+                item.hostingDays = (int)days;
+                item.extraDays = days > 4 ? (int) days - 4 : 0;
+
+                
+                item.Resident = resident;
+                
+                int extraDays = item.hostingDays > 4 ? item.hostingDays - 4 : 0;
+                item.hostingFees = extraDays * 20;
+                report.Add(item);
+            }
+            return View(report);
         }
 
         // GET: /VisitsReport/Details/5
-        public ActionResult Details(int? id)
+        /*public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -122,6 +144,6 @@ namespace DormDoorMan.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
+        }*/
     }
 }

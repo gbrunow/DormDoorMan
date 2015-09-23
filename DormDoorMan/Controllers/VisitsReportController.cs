@@ -25,11 +25,16 @@ namespace DormDoorMan.Controllers
             foreach (var resident in residents)
             {
                 VisitsReportViewModel item = new VisitsReportViewModel();
-                var visits = db.Visits.Where(v => v.ResidentID == resident.Id && v.CheckIn >= StartDate && v.CheckIn <= EndDate);
+                var visits = db.Visits.Where(v => v.ResidentID == resident.Id && (v.CheckIn >= StartDate || v.CheckIn <= EndDate));
                 double days = 0;
                 foreach(var visit in visits)
                 {
-                    days += visit.VisitTime; 
+                    days += visit.VisitTime;
+                    if (visit.CheckIn < StartDate && days > 0)
+                    {
+                        days -= (int)((StartDate ?? DateTime.Now) - visit.CheckIn).Days;
+                        days = days <= 0 ? 0 : days;
+                    }
                 }
                 item.hostingDays = (int)days;
                 item.extraDays = days > 4 ? (int) days - 4 : 0;

@@ -15,15 +15,17 @@ namespace DormDoorMan.Controllers
         private DDMDbContext db = new DDMDbContext();
 
         // GET: /VisitsReport/
-        public ActionResult Index()
+        public ActionResult Index(DateTime? StartDate, DateTime? EndDate)
         {
+            StartDate = StartDate == null ? DateTime.Now.Date.AddMonths(-1) : StartDate;
+            EndDate = EndDate == null ? DateTime.Now.Date : EndDate;
+
             var residents = db.Residents.ToList();
             List<VisitsReportViewModel> report = new List<VisitsReportViewModel>();
             foreach (var resident in residents)
             {
                 VisitsReportViewModel item = new VisitsReportViewModel();
-                var monthAgo = DateTime.Now.Date.AddMonths(-1);
-                var visits = db.Visits.Where(v => v.ResidentID == resident.Id && v.CheckIn >= monthAgo);
+                var visits = db.Visits.Where(v => v.ResidentID == resident.Id && v.CheckIn >= StartDate && v.CheckIn <= EndDate);
                 double days = 0;
                 foreach(var visit in visits)
                 {
@@ -39,6 +41,10 @@ namespace DormDoorMan.Controllers
                 item.hostingFees = extraDays * 20;
                 report.Add(item);
             }
+
+            ViewBag.StartDate = StartDate;
+            ViewBag.EndDate = EndDate;
+
             return View(report);
         }
 

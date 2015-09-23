@@ -2,14 +2,33 @@
 
 @{
     ViewBag.Title = "Index";
+    ViewBag.Tab = "report";
 }
 
 <h2>Relatório de Diárias</h2>
-<span>@DateTime.Now.Date.AddMonths(-1).ToLongDateString() à @DateTime.Now.Date.ToLongDateString()</span>
-<!--
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>-->
+
+@using (Html.BeginForm("Index", "VisitsReport", FormMethod.Get))
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <div>
+            <span>Data Inicial: </span>
+            @Html.TextBox("StartDate", null, htmlAttributes: new { @Value = string.Format("{0:yyyy-MM-dd}", ViewBag.StartDate), @class = "form-control", @type = "date" })
+        </div>
+        <div>
+            <span>Data Final: </span>
+            @Html.TextBox("EndDate", null, htmlAttributes: new { @Value = string.Format("{0:yyyy-MM-dd}", ViewBag.EndDate), @class = "form-control", @type = "date" })
+        </div>
+    </p>
+    <div class="form-horizontal">
+        <div>
+            <input type="submit" value="Search" class="btn btn-default" />
+        <p></p>
+        </div>
+    </div>
+}
+
+
 <table class="table">
     <tr>
         <th>@Html.DisplayNameFor(model => model.Resident)</th>

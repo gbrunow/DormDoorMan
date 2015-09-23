@@ -47,8 +47,7 @@ namespace DormDoorMan.Models
         public string NaturalityState { get; set; }
 
         [Required, Display(Name = "Data de Nascimento"), DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
-        //[DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Birthday { get; set; }
 
         [Display(Name = "Gênero")]
